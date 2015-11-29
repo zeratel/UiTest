@@ -7,7 +7,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 /**
@@ -22,24 +21,24 @@ public class CircleView extends View{
     Paint mCirclePaint = new Paint();
     Paint mAccBallPaint = new Paint();
     private float mAccBallRadius = 50;
-    private float sweepAngle;
+    private float sweepAngle = 0;
     private long mDuration = 5000;
 
     public CircleView(Context context) {
         super(context);
-        Log.i("LHF1", "1");
+//        Log.i("LHF1", "1");
         init();
     }
 
     public CircleView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        Log.i("LHF1", "2");
+//        Log.i("LHF1", "2");
         init();
     }
 
     public CircleView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        Log.i("LHF1", "3");
+//        Log.i("LHF1", "3");
         init();
     }
 
@@ -82,7 +81,7 @@ public class CircleView extends View{
         if (rectF != null) {
 
             canvas.drawCircle(rectF.centerX(), rectF.centerY(), getBigCircleRadius(), mCirclePaint);
-            Log.e("LHF1", "rectF.centerX():" + rectF.centerX() + ",rectF.centerY()" + rectF.centerY());
+//            Log.e("LHF1", "rectF.centerX():" + rectF.centerX() + ",rectF.centerY()" + rectF.centerY());
 
             //79 1001
             //540 792
@@ -97,17 +96,19 @@ public class CircleView extends View{
     private void drawSmallCircle(Canvas canvas){
         if (rectF != null) {
 
-            double sweepAngle = Math.PI/180 * 45;
+//            double sweepAngle = Math.PI/180 * 45;
+            double sweepAngle2 = Math.PI/180 * sweepAngle;
+
             //caculate the circle's center(x, y)
-            float y = (float)Math.sin(sweepAngle)*(getBigCircleRadius());
-            float x = (float)Math.cos(sweepAngle)*(getBigCircleRadius());
+            float y = (float)Math.sin(sweepAngle2)*(getBigCircleRadius());
+            float x = (float)Math.cos(sweepAngle2)*(getBigCircleRadius());
             int restoreCount = canvas.save();
             //change aix center position
             canvas.translate(rectF.centerX(), rectF.centerY());
             canvas.drawCircle(x, y, mAccBallRadius, mAccBallPaint);
             canvas.restoreToCount(restoreCount);
 
-            Log.e("LHF1","rectF.left:"+rectF.left+",rectF.top:"+rectF.top+",rectF.right:"+rectF.right+",rectF.bottom:"+rectF.bottom);
+//            Log.e("LHF1","rectF.left:"+rectF.left+",rectF.top:"+rectF.top+",rectF.right:"+rectF.right+",rectF.bottom:"+rectF.bottom);
         }
     }
 
