@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -26,19 +27,21 @@ public class CircleView extends View{
 
     public CircleView(Context context) {
         super(context);
-//        Log.i("LHF1", "1");
+        Log.i("LHF1", "1");
+        Log.i("LHF1", "1");
+        Log.i("LHF1", "1");
         init();
     }
 
     public CircleView(Context context, AttributeSet attrs) {
         super(context, attrs);
-//        Log.i("LHF1", "2");
+        Log.i("LHF1", "2");
         init();
     }
 
     public CircleView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-//        Log.i("LHF1", "3");
+        Log.i("LHF1", "3");
         init();
     }
 
@@ -81,7 +84,7 @@ public class CircleView extends View{
         if (rectF != null) {
 
             canvas.drawCircle(rectF.centerX(), rectF.centerY(), getBigCircleRadius(), mCirclePaint);
-//            Log.e("LHF1", "rectF.centerX():" + rectF.centerX() + ",rectF.centerY()" + rectF.centerY());
+            Log.e("LHF1", "rectF.centerX():" + rectF.centerX() + ",rectF.centerY()" + rectF.centerY());
 
             //79 1001
             //540 792
@@ -108,7 +111,7 @@ public class CircleView extends View{
             canvas.drawCircle(x, y, mAccBallRadius, mAccBallPaint);
             canvas.restoreToCount(restoreCount);
 
-//            Log.e("LHF1","rectF.left:"+rectF.left+",rectF.top:"+rectF.top+",rectF.right:"+rectF.right+",rectF.bottom:"+rectF.bottom);
+            Log.e("LHF1","rectF.left:"+rectF.left+",rectF.top:"+rectF.top+",rectF.right:"+rectF.right+",rectF.bottom:"+rectF.bottom);
         }
     }
 
@@ -134,7 +137,7 @@ public class CircleView extends View{
 
         @Override
         public Float evaluate(float fraction, Float startValue, Float endValue) {
-//            Log.d("", " current fraction == " + fraction);
+            Log.d("", " current fraction == " + fraction);
             return fraction * (endValue - startValue);
         }
     }
