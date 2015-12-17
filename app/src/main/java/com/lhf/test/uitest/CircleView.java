@@ -28,8 +28,8 @@ public class CircleView extends View{
     public CircleView(Context context) {
         super(context);
         Log.i("LHF1", "1");
-        Log.i("LHF1", "1");
-        Log.i("LHF1", "1");
+        Log.i("LHF1", "2");
+        Log.i("LHF1", "3");
         init();
     }
 
